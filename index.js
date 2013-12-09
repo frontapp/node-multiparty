@@ -409,9 +409,7 @@ Form.prototype.onParsePartEnd = function() {
   if (this.destStream) {
     flushWriteCbs(this);
     var s = this.destStream;
-    process.nextTick(function() {
-      s.end();
-    });
+    s.end();
   }
   clearPartVars(this);
 }
